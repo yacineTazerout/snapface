@@ -1,0 +1,16 @@
+
+  <div class="card shadow" [ngClass]="{ cardClick: buttonCliced === true}" style="max-width:250px;height: auto;">
+    <div class="card-header">
+      <h2>{{ facesnap.title }}</h2>
+      <p>{{ facesnap.date }}</p>
+    </div>
+    <div class="card-body">
+      <img class="img-fluid" [src]="facesnap.imgUrl" [alt]="facesnap.alt" />
+    </div>
+    <p class="text-center">
+      {{ facesnap.likes }}
+      <button class="btn ml-2" (click)="onLike()">{{likeButton}}</button>
+    </p>
+    <p *ngIf="facesnap.location">Picture taken in {{facesnap.location}}</p>
+  </div>
+
